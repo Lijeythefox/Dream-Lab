@@ -43,11 +43,15 @@ Download `index.html` and `house.html` into the same folder, then double-click e
 
 ## What's in the house (`house.html`)
 
-- **Ground floor:** the living room, music wall, jukebox, LEGO shelf, kitchen, dining and games corner, with a front hall and floating oak stairs.
-- **Upstairs:** both bedrooms, the bathroom, battlestations, the drinks fridge, the fireside chat corner and a long glass balcony.
-- **Outside:** a pool with a sunken deck island, an outdoor lounge, the skatepark on the lawn and a garden, all in a clearing surrounded by forest.
-- **Basement lab:** everything from the warehouse floor, including the fab shop, PCB line, studio, arena, gym, sauna and bouldering wall. To get there, walk into the glass "THE LAB ↓" pavilion in the garden and press `E`.
-- **Cars:** a carport by the top of the driveway with a white 911, a blue Mustang and a ute, plus the underground garage at the bottom of the driveway ramp with the orange 911 and the black Boss 429.
+The house is long from front to back (50 m) and 13 m wide, in a low-poly / mid-poly style. A gallery hallway runs the full length on both floors so there is wall space for art, and each room has its own door instead of everything being one open space.
+
+- **Ground floor (front to back):** the front door, then the atrium, home gym, sim racing room, games room, kitchen and dining, and the living room at the far end.
+- **Atrium:** spiral stairs and an indoor climbing wall, both going up to the second floor. Stand at the bottom of either and press `E`.
+- **Upstairs:** your bedroom with a small electronics bench (PC, soldering station, Bambu A1 3D printer, pegboard), battlestations, the fireside chat corner, a drinks nook, the bathroom, a friend's bedroom and a home cinema. A long glass balcony runs down the side.
+- **Dumbwaiter:** built into the back wall of your bedroom, running straight down to the basement lab. Stand at either hatch and press `E` to send it up or down.
+- **Basement lab:** the warehouse floor, with a new layout. The recording studio is where the bouldering wall used to be, there is a dumbwaiter staging bay, and a robot test track sits where the gym was. To get there, walk into the glass "THE LAB ↓" pavilion in the garden and press `E`.
+- **Outside:** a pool and deck, a garden, and a bigger skatepark (halfpipe, quarter pipe, funbox, ledge, rail). Every ramp and wall has its own graffiti, so the patterns don't repeat.
+- **Cars (modelled in Blender):** the carport has a white 911, a blue Mustang and an old red Chevy C10 truck. The underground garage has a red Hellcat and a red 80s Ferrari with pop-up headlights.
 
 Both versions have a lab cat that wanders, sits and naps, neon signs, and day/night lighting. The movie posters, arcade game names, artwork and skate deck designs are original, made for this model.
 
