@@ -43,17 +43,16 @@ Download `index.html` and `house.html` into the same folder, then double-click e
 
 ## What's in the house (`house.html`)
 
-The house is long from front to back (50 m), in a mid-poly style. A gallery hallway runs the full length on both floors so there is wall space for art, and each room has its own door instead of everything being one open space. The back of the house was pushed out: every main room is a bit deeper, and a strip of new back rooms runs behind them, each reached through a door in the old back wall.
+The house is square (about 26 x 26 m, two floors) in a mid-poly style. Two wings of rooms face each other across a 4 m wide gallery hallway that runs from the front door to a glass door onto the pool deck. Each wing has a strip of back rooms behind it.
 
-- **Ground floor (front to back):** the front door, then the atrium, home gym, sim racing room, games room, kitchen and dining, and the living room at the far end.
-- **Ground floor back rooms:** a workshop with a tool wall, a sauna and cold plunge, a mudroom for bikes and boards, a board game room, a pantry and laundry, and a library and record room.
-- **Atrium:** spiral stairs and an indoor climbing wall, both going up to the second floor. Stand at the bottom of either and press `E`.
-- **Upstairs:** your bedroom, battlestations, the fireside chat corner, a drinks nook, the bathroom, a friend's bedroom and a home cinema. A long glass balcony runs down the side.
-- **Upstairs back rooms:** your mini lab (PC, soldering station, Bambu A1 3D printer, pegboard), a streaming booth, a plant and reading loft, the friend's ensuite and laundry, and a music practice room.
-- **Dumbwaiter:** built into a column against your bedroom's back wall, running straight down to the basement lab. Stand at either hatch and press `E` to send it up or down.
-- **Basement lab:** the warehouse floor, with a new layout. The recording studio is where the bouldering wall used to be, there is a dumbwaiter staging bay, and a robot test track sits where the gym was. To get there, walk into the glass "THE LAB ↓" pavilion in the garden and press `E`.
-- **Outside:** a pool and deck, a garden, and a bigger skatepark (halfpipe, quarter pipe, funbox, ledge, rail). Every ramp and wall has its own graffiti, so the patterns don't repeat.
-- **Cars (modelled in Blender):** the carport has a white 911, a blue Mustang and an old red Chevy C10 truck. The underground garage has a red Hellcat and a red 80s Ferrari with pop-up headlights.
+- **Entry hall:** you come in through a double-height glass entry with an oak pivot door, a pendant light cluster and a sculpture. It opens straight onto the atrium (spiral stairs and climbing wall) and the open-plan living room and kitchen, and you can see the upstairs walkway above you.
+- **Ground floor:** atrium, home gym, sim racing room (checkered floor, helmet shelf, tyre stacks), games room, kitchen and dining, and the living room, which is open to the hallway.
+- **Ground floor back rooms:** workshop, sauna and cold plunge, mudroom, board game room, pantry and laundry, library and record room.
+- **Upstairs:** your bedroom (with the dumbwaiter hatch in the wall), battlestations and fireside corner, drinks nook, bathroom, a friend's bedroom (wardrobe, desk, bookcase) and a home cinema.
+- **Upstairs back rooms:** your mini lab, a streaming booth, a plant and reading loft, the friend's ensuite and laundry, and a music practice room.
+- **Front garden (out the front door):** a stone path between topiary and lavender, and a round garden room with a fountain and benches. There is also a Japanese garden with a koi pond, red bridge, maples, bamboo and stone lanterns. Further in are a wisteria pergola, flower borders, tree ferns, hydrangeas and waratahs, with snow gums along the hedge.
+- **Basketball court:** a full-size court out the front, with two hoops, lights and a bench.
+- **Dumbwaiter, basement lab, pool, skatepark and cars:** as before. Stand at a hatch and press `E` to use the dumbwaiter; walk into the glass "THE LAB ↓" pavilion and press `E` to go down.
 
 **Performance:** only the 8 lamps nearest to you are real lights at any moment, the floor you aren't on is hidden (the basement when you're upstairs, and the other way round), small round parts use fewer polygons, and identical materials are merged so the scene needs fewer draw calls.
 
