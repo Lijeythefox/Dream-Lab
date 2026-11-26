@@ -47,7 +47,7 @@ Download `index.html` and `house.html` into the same folder, then double-click e
 - **Upstairs:** both bedrooms, the bathroom, battlestations, the drinks fridge, the fireside chat corner and a long glass balcony.
 - **Outside:** a pool with a sunken deck island, an outdoor lounge, the skatepark on the lawn and a garden, all in a clearing surrounded by forest.
 - **Basement lab:** everything from the warehouse floor, including the fab shop, PCB line, studio, arena, gym, sauna and bouldering wall. To get there, walk into the glass "THE LAB ↓" pavilion in the garden and press `E`.
-- **Underground garage:** the cars, reached by the driveway ramp.
+- **Cars:** a carport by the top of the driveway with a white 911, a blue Mustang and a ute, plus the underground garage at the bottom of the driveway ramp with the orange 911 and the black Boss 429.
 
 Both versions have a lab cat that wanders, sits and naps, neon signs, and day/night lighting. The movie posters, arcade game names, artwork and skate deck designs are original, made for this model.
 

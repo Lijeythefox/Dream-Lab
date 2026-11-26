@@ -612,8 +612,8 @@ function loft(xs,sec,cap){const secs=xs.map(sec),Mn=secs[0].length,pos=[],idx=[]
   for(let i=0;i<xs.length-1;i++)for(let j=0;j<Mn;j++){const j2=(j+1)%Mn,a=i*Mn+j,b=(i+1)*Mn+j,c=(i+1)*Mn+j2,d=i*Mn+j2;idx.push(a,b,c,a,c,d);}
   if(cap)[0,xs.length-1].forEach(i=>{let cy=0,cz=0;secs[i].forEach(([y,z])=>{cy+=y;cz+=z;});const ci=pos.length/3;pos.push(xs[i],cy/Mn,cz/Mn);for(let j=0;j<Mn;j++)idx.push(ci,i*Mn+j,i*Mn+(j+1)%Mn);});
   const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setIndex(idx);g.computeVertexNormals();return g;}
-function porsche(x,z){const g=O(x,z,PI/2);
-  const paint=new THREE.MeshPhysicalMaterial({color:0xd0561a,metalness:.3,roughness:.3,clearcoat:1,clearcoatRoughness:.06,side:THREE.DoubleSide});
+function porsche(x,z,ry,col){const g=O(x,z,ry==null?PI/2:ry);
+  const paint=new THREE.MeshPhysicalMaterial({color:col||0xd0561a,metalness:.3,roughness:.3,clearcoat:1,clearcoatRoughness:.06,side:THREE.DoubleSide});
   const gl=new THREE.MeshPhysicalMaterial({color:0x0f151b,metalness:.5,roughness:.05,clearcoat:1,side:THREE.DoubleSide});
   const HT=[[-2.27,.6],[-2.12,.75],[-1.9,.82],[-1.55,.87],[-1.0,.88],[0,.87],[.5,.83],[1.0,.775],[1.6,.735],[2.0,.68],[2.27,.55]];
   const HB=[[-2.27,.36],[-2.0,.26],[2.0,.26],[2.27,.34]],HW=[[-2.27,.8],[-1.6,.9],[-1.0,.91],[0,.88],[1.0,.86],[1.8,.84],[2.27,.78]],AX=[1.24,-1.21],L=2.27;
@@ -638,10 +638,10 @@ function porsche(x,z){const g=O(x,z,PI/2);
     for(let k=0;k<5;k++){const sp=B(g,.05,.19,.02,M(0xdedfe0,{metalness:.9,roughness:.15}),ax,.33,sd*.93);sp.position.y=.33;sp.geometry.translate(0,.1-.095,0);sp.rotation.z=k*PI*2/5;sp.position.x=ax+Math.sin(-k*PI*2/5)*.095;sp.position.y=.33+Math.cos(k*PI*2/5)*.095;}
     Cz(g,.05,.27,mat.chrome,ax,.33,sd*.8,12);Cz(g,.17,.05,M(0x6a625c,{metalness:.7}),ax,.33,sd*.7,20);}));
   const sh=new THREE.Mesh(new THREE.CircleGeometry(1,32),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:.45,depthWrite:false}));sh.rotation.x=-PI/2;sh.scale.set(2.5,1.08,1);sh.position.y=.016;g.add(sh);
-  fp(x,z,4.75,2.1,PI/2,0);return g;}
+  fp(x,z,4.75,2.1,ry==null?PI/2:ry,0);return g;}
 porsche(17,13);
-function mustang(x,z){const g=O(x,z,PI/2);
-  const paint=new THREE.MeshPhysicalMaterial({color:0x0b0b0d,metalness:.45,roughness:.2,clearcoat:1,clearcoatRoughness:.04,side:THREE.DoubleSide});
+function mustang(x,z,ry,col){const g=O(x,z,ry==null?PI/2:ry);
+  const paint=new THREE.MeshPhysicalMaterial({color:col||0x0b0b0d,metalness:.45,roughness:.2,clearcoat:1,clearcoatRoughness:.04,side:THREE.DoubleSide});
   const gl=new THREE.MeshPhysicalMaterial({color:0x121a22,metalness:.5,roughness:.05,clearcoat:1,side:THREE.DoubleSide});const chr=M(0xeef0f2,{metalness:1,roughness:.08});
   const L=2.38,AX=[1.42,-1.34];
   const HT=[[-2.38,.62],[-2.32,.86],[-2.05,.94],[-1.2,.94],[0,.91],[.3,.885],[1.2,.865],[2.1,.85],[2.32,.83],[2.38,.62]];
@@ -672,7 +672,7 @@ function mustang(x,z){const g=O(x,z,PI/2);
     const wg=new THREE.Group();wg.position.set(ax,.35,sd*.94);g.add(wg);for(let k=0;k<5;k++){const a=k*PI*2/5,sp=B(wg,.09,.15,.02,chr,0,0,0);sp.position.set(Math.sin(a)*.12,Math.cos(a)*.12,0);sp.rotation.z=-a;}
     Cz(g,.07,.29,chr,ax,.35,sd*.8,16);for(let k=0;k<5;k++){const a=k*PI*2/5+.6;Cz(g,.012,.3,mat.dark,ax+Math.sin(a)*.045,.35+Math.cos(a)*.045,sd*.8,6);}}));
   const sh=new THREE.Mesh(new THREE.CircleGeometry(1,32),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:.45,depthWrite:false}));sh.rotation.x=-PI/2;sh.scale.set(2.6,1.08,1);sh.position.y=.016;g.add(sh);
-  fp(x,z,4.9,2.1,PI/2,0);return g;}
+  fp(x,z,4.9,2.1,ry==null?PI/2:ry,0);return g;}
 mustang(24,13);
 [[17,13],[24,13]].forEach(([x,z])=>{const s=new THREE.SpotLight(0xffe2c0,1.4,15,.45,.5,1.2);s.position.set(x,H-.6,z-1.5);s.target.position.set(x,0,z);S.add(s);S.add(s.target);});
 {const g=O(0,0,0);[[26.9,13],[29.6,13]].forEach(([x,z])=>{B(g,.35,3.8,.35,mat.red,x,0,z);B(g,.6,.03,.6,mat.dark,x,0,z);[-1,1].forEach(s=>{const a=B(g,1.1,.06,.12,mat.dark,x+(x<28?.6:-.6),.12,z+s*.15);a.rotation.y=s*.5;});});B(g,3.1,.25,.3,mat.red,28.25,3.8,13);fp(26.9,13,.4,.4,0,0);fp(29.6,13,.4,.4,0,0);}
@@ -1286,9 +1286,9 @@ function relocate(){S.updateMatrixWorld(true);const bb=new THREE.Box3(),cv3=new 
     if(y>H-.6)return inR(x,z,DKR)?'lounge':'del';
     if(y>=3.75&&z>=-18.6&&z<=-7.7&&x>=-30.6&&x<=18.6)return x<-4?'up':'living';
     return 'base';};
-  S.children.slice().forEach((o,i)=>{if(o.isLight&&!o.isPointLight)return;if(o===cam)return;const tag=tagAt(i,'s');
+  S.children.slice().forEach((o,i)=>{if(o.isLight&&!o.isPointLight&&!o.isSpotLight)return;if(o===cam)return;const tag=tagAt(i,'s');
     let p;if(o.isLight)p=o.position.clone();else{bb.setFromObject(o);p=bb.isEmpty()?o.position.clone():bb.getCenter(cv3).clone();}
-    const k=cls(p.x,p.y,p.z,tag);if(k==='keep')return;if(k==='del'){S.remove(o);return;}const m=MOV[k];o.position.x+=m[0];o.position.y+=m[1];o.position.z+=m[2];});
+    const k=cls(p.x,o.isSpotLight?Math.min(p.y,3.5):p.y,p.z,tag);if(k==='keep')return;if(k==='del'){S.remove(o);return;}const m=MOV[k];if(o.isSpotLight&&k==='base')o.position.y=Math.min(o.position.y,BH-.3);o.position.x+=m[0];o.position.y+=m[1];o.position.z+=m[2];});
   const keep=[];cols.forEach((c,i)=>{const tag=tagAt(i,'c'),cx=(c.x1+c.x2)/2,cz=(c.z1+c.z2)/2;let k;
     if(tag==='keep')k='keep';else if(tag==='del'||tag==='lstruct')k='del';else if(tag==='base'||tag==='skate')k=tag;
     else if(c.l===3)k=inR(cx,cz,DKR)?'lounge':'del';else if(c.l===1)k=cx<-4?'up':'living';else k='base';
@@ -1304,7 +1304,7 @@ function relocate(){S.updateMatrixWorld(true);const bb=new THREE.Box3(),cv3=new 
 relocate();
 ZN.push({n:'Front hall + stairs',x1:-12,z1:-18,x2:-4,z2:-8,l:0,c:'#5a4434'},{n:'Upstairs landing',x1:-8,z1:-18,x2:-4,z2:-8,l:1,c:'#5a4434'},{n:'Balcony',x1:-34,z1:-8,x2:-4,z2:-5.4,l:1,c:'#4a4744'},
   {n:'Pool + deck',x1:-34,z1:-8,x2:-6,z2:7.5,l:0,c:'#1d6f73'},{n:'Lab pavilion (stairs down to the lab)',x1:.2,z1:11.8,x2:3.8,z2:15.4,l:0,c:'#e3d1b9'},{n:'Driveway ramp to the garage',x1:17.2,z1:18,x2:23.8,z2:46,l:0,c:'#8a847e'},
-  {n:'Garden',x1:-46,z1:-30,x2:44,z2:45,l:0,c:'#3f5a34'},{n:'Upstairs',x1:-34,z1:-18,x2:-4,z2:-5.4,l:1,c:'#3a2c22'},{n:'The lab (basement)',x1:-30,z1:-18,x2:30,z2:18,l:-1,c:'#2e2520'});
+  {n:'Carport + parking',x1:24,z1:18.5,x2:37.5,z2:29,l:0,c:'#8a8174'},{n:'Garden',x1:-46,z1:-30,x2:44,z2:45,l:0,c:'#3f5a34'},{n:'Upstairs',x1:-34,z1:-18,x2:-4,z2:-5.4,l:1,c:'#3a2c22'},{n:'The lab (basement)',x1:-30,z1:-18,x2:30,z2:18,l:-1,c:'#2e2520'});
 
 /* ================= THE HOUSE (x -34..-4, z -18..-8) ================= */
 const HS={x1:-34,x2:-4,z1:-18,z2:-8},GC=4.5,UCE=9.4;
@@ -1446,6 +1446,21 @@ col(-46.5,-30.5,-45.5,45.5,0);col(43.5,-30.5,44.5,45.5,0);col(-46.5,-30.5,44.5,-
 {const bm=nightMat(E(0xffe2b0,.1),.1,2.2);[[-6,10],[-2,11],[2,9.5],[-16,11],[-16,14.5],[5,13.6],[10,20],[14,26],[18,34]].forEach(([x,z])=>{const g=O(x,z,0);Cy(g,.07,.08,.7,mat.black,0,0,0,10);Cy(g,.06,.06,.08,bm,0,.62,0,10);});}
 roofLight(0xffd9a8,0,.7,12,-16,2.5,12);roofLight(0xffc887,0,.8,10,-26,3,7);
 label('Garden',-16,2.6,20,.3);
+/* ================= CARS OUTSIDE: gravel parking + carport ================= */
+{const gv=M(0x8a8174,{roughness:1}),CP={x1:25,x2:37.5,z1:18.5,z2:29};flat(CP.x1,CP.z1,CP.x2,CP.z2,gv,.01);flat(23.8,22,25,25,gv,.01);
+  const g=O(0,0,0),h=3.0;[[25.3,19.2],[37.3,19.2],[25.3,24.0],[37.3,24.0]].forEach(([x,z])=>{B(g,.14,h,.14,mat.black,x,0,z);col(x-.1,z-.1,x+.1,z+.1,0);});
+  B(g,12.6,.22,5.6,M(0x2a2826,{roughness:.9}),31.3,h,21.3);B(g,12.8,.4,.18,charM(13,1),31.3,h-.1,18.5);B(g,12.8,.4,.18,charM(13,1),31.3,h-.1,24.1);ceilPlane(25,18.5,37.6,24.1,h-.01,oakM(12.6,5.6));
+  B(g,12.6,h,.1,charM(13,3),31.3,0,18.55);col(25,18.45,37.6,18.65,0);
+  const bulb=nightMat(E(0xffd28a,.35),.35,2.6);for(let x=25.6;x<37;x+=1.43){for(let i=0;i<6;i++){const t=i/6,y=h-.05-Math.sin(t*PI)*.2;Sp(g,.035,bulb,x+t*1.43,y,24.05);}}
+  for(let x=27;x<37;x+=3)Cy(g,.07,.07,.01,nightMat(E(0xffe2b0,.15),.15,2.4),x,h-.02,21.3,14);
+  roofLight(0xffd9a8,0,.9,9,31.3,2.6,21.3);label('Carport + parking',31.3,3.9,21.3,.3);}
+porsche(27.4,21.4,PI/2,0xe9e6df);mustang(31.3,21.4,PI/2,0x1f5fa8);
+{const ute=O(35.2,21.5,PI/2),wh=M(0x2c3a2c,{metalness:.4,roughness:.35});B(ute,4.9,.75,1.9,wh,0,.45,0);B(ute,2.2,.7,1.8,wh,.9,1.2,0);B(ute,2.1,.5,1.82,M(0x121a22,{metalness:.5,roughness:.05}),.95,1.3,0);
+  B(ute,2.3,.5,1.9,M(0x1a1a1c),-1.3,1.2,0);[[-1.6,1],[1.5,1],[-1.6,-1],[1.5,-1]].forEach(([x,s])=>{Cz(ute,.4,.32,mat.rubber,x,.4,s*.85,18);Cz(ute,.22,.34,mat.steelL,x,.4,s*.86,12);});
+  B(ute,.06,.2,1.6,mat.chrome,2.45,.65,0);[-.6,.6].forEach(z=>B(ute,.05,.14,.3,E(0xffffff,.8),2.46,.85,z));[-.7,.7].forEach(z=>B(ute,.05,.18,.2,E(0xff2a2a,.6),-2.46,.85,z));
+  B(ute,.9,.5,.9,mat.orange,-1.6,1.45,.3);Cy(ute,.12,.12,.5,M(0x3a7a3a),-1.0,1.45,-.4,10);fp(35.2,21.5,5,2,PI/2,0);}
+label('Garage cars: down the ramp ↓',20.5,3.2,31,.26);
+
 buildHalos();
 
 bake();
@@ -1484,7 +1499,7 @@ const SPOTS0=[['Entrance',2,0,15.8,0],['Electronics + assembly',-25.6,0,0,PI/2],
   ['Recording studio',2.5,0,-9.2,0],['Control room',12.6,0,-9.2,.6],['Robot arena',-2,0,5.2,0],['Film stage',10.5,0,4.2,0],['Gym',24.5,0,4.4,0],['Sauna',25.3,0,6.6,-PI/2],['Bouldering wall',26,0,-12,0],['Downstairs bathroom',21,0,-15.4,0],['Cars',20.5,0,9.2,PI],['Sim racing rig',13.6,0,9.5,PI],['Design corner',-11,0,12.4,PI],
   ['Loft: battlestations',-9.6,LY,-10.4,PI],['Loft: lounge',1,LY,-11.2,0],['Loft: kitchen',9,LY,-9.4,0],['Drinks fridge',-12.6,LY,-11.4,0],['Fireside chat',-7,LY,-12.4,0],['Bedrooms',-24.2,LY,-11.2,0],['Games + slide',16.6,LY,-12.8,-PI/2],['Roof stairs',11.9,LY,-8.95,0],['Rooftop deck',15.2,Rh,-6.0,-.785]];
 const mapSpot=([n,x,f,z,y])=>{if(n==='Roof stairs')return null;if(f===Rh)return ['Outdoor lounge',-4.8,0,4,y];if(f===LY)return x<-4?[n.replace('Loft: ','Upstairs: '),x-4,UY,z,y]:[({'Loft: lounge':'Living room','Loft: kitchen':'Kitchen','Games + slide':'Games room'})[n]||n,x-30,0,z,y];if(n==='Skatepark')return [n,x+SKX,0,z,y];return [n==='Entrance'?'Lab entrance':n,x,BY,z,y];};
-const SPOTS=[['Front garden',-16,0,15,0],['Pool deck',-19,0,-4.4,PI],['Balcony',-20,UY,-6.6,PI],['Front hall',-9.5,0,-10.6,0],['Lab pavilion',PAV.x,0,10.2,PI],['Garage ramp',20.5,0,44,0],...SPOTS0.map(mapSpot).filter(Boolean)];
+const SPOTS=[['Front garden',-16,0,15,0],['Pool deck',-19,0,-4.4,PI],['Balcony',-20,UY,-6.6,PI],['Front hall',-9.5,0,-10.6,0],['Lab pavilion',PAV.x,0,10.2,PI],['Garage ramp',20.5,0,44,0],['Carport',31.3,0,32.5,0],...SPOTS0.map(mapSpot).filter(Boolean)];
 const nav=$('#travel');
 SPOTS.forEach(([n,x,f,z,y])=>{const b=document.createElement('button');b.type='button';b.textContent=n;b.addEventListener('click',()=>{if(ride||climb)return;P.x=x;P.z=z;P.feet=f;yaw=y;pitch=-.05;b.blur();});nav.appendChild(b);});
 
